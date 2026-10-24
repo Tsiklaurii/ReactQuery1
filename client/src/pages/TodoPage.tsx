@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import type { ITodo } from "../interfaces/todo.interface"
 import TodoItem from "../components/todo/TodoItem"
 import useFetchTodo from "../hooks/queries/todo/useFetchTodo"
+import UpdateTodo from "../components/todo/UpdateTodo"
 
 const TodoPage = () => {
     const { id } = useParams()
@@ -14,6 +15,7 @@ const TodoPage = () => {
     return (
         <div className="p-2.5">
             <TodoItem id={todoId} title={title} completed={isCompleted} description={description} />
+            {data && <UpdateTodo key={data.id} todo={data} />}
         </div>
     )
 }

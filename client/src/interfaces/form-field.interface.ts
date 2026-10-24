@@ -3,5 +3,7 @@ export interface IFormField {
     type: string;
     placeholder: string;
     label: string;
+    defaultValue?: string;
+    defaultChecked?: boolean;
     handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
